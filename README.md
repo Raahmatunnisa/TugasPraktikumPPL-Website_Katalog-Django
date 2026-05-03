@@ -9,7 +9,7 @@
 
 ## 📝 Penjelasan Singkat Program
 
-Website **TechStore Indonesia** adalah aplikasi katalog produk sederhana berbasis Django yang menampilkan daftar produk teknologi tanpa menggunakan database. Seluruh data produk di-*hardcode* langsung di dalam file Python (`data_produk.py`).
+Website **OrbitStore Indonesia** adalah aplikasi katalog produk sederhana berbasis Django yang menampilkan daftar produk teknologi tanpa menggunakan database. Seluruh data produk di-*hardcode* langsung di dalam file Python (`data_produk.py`).
 
 ### Fitur Utama
 
