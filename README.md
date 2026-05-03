@@ -1,6 +1,5 @@
 # 📦 Katalog Produk — Praktikum PPL
 
-| Field | Isian |
 |-------|-------|
 | **Nama** | *Rahmatun Nisa* |
 | **NIM**  | *2308107010016* |
