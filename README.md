@@ -1,9 +1,9 @@
 # 📦 Katalog Produk — Praktikum PPL
 
-|-------|-------|
-| **Nama** | *Rahmatun Nisa* |
-| **NIM**  | *2308107010016* |
-| **Framework** | Django |
+
+**Nama**: Rahmatun Nisa  
+**NIM**: 2308107010016  
+**Framework**: Django  
 
 ---
 
