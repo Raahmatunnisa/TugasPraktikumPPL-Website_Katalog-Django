@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}TechStore{% endblock %} — TechStore Indonesia</title>
+  <title>{% block title %}OrbitStore{% endblock %} — OrbitStore Indonesia</title>
   <style>
     /* ===== Reset & variabel ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -127,7 +127,7 @@
 
 <!-- ===== Navigasi ===== -->
 <nav>
-  <a href="/" class="brand">🛒 TechStore</a>
+  <a href="/" class="brand">🛒 OrbitStore</a>
   <div class="nav-links">
     <a href="/" {% if request.path == '/' %}class="aktif"{% endif %}>Beranda</a>
     <a href="/produk/" {% if '/produk' in request.path %}class="aktif"{% endif %}>Produk</a>
@@ -142,7 +142,7 @@
 
 <!-- ===== Footer ===== -->
 <footer>
-  <p>© 2026 TechStore Indonesia — Praktikum PPL</p>
+  <p>© 2026 OrbitStore Indonesia — Praktikum PPL</p>
 </footer>
 
 </body>

@@ -60,13 +60,13 @@ def detail_produk(request, produk_id):
 def kontak(request):
     """Menampilkan halaman informasi kontak."""
     info_kontak = {
-        'nama_toko'  : 'TechStore Indonesia',
-        'alamat'     : 'Jl. Sudirman No. 45, Jakarta Pusat, DKI Jakarta 10220',
+        'nama_toko'  : 'OrbitStore Indonesia',
+        'alamat'     : 'Jl. Semangka No.11, Ulee Kareng, Kota Banda Aceh, Aceh 23242',
         'telepon'    : '+62 21 5555-7890',
         'whatsapp'   : '+62 812-3456-7890',
-        'email'      : 'cs@techstore.id',
+        'email'      : 'cs@orbitstore.id',
         'jam_buka'   : 'Senin – Jumat: 08.00 – 17.00 WIB',
-        'instagram'  : '@techstore.id',
+        'instagram'  : '@orbitstore.id',
     }
     konteks = {
         'judul_halaman': 'Hubungi Kami',
