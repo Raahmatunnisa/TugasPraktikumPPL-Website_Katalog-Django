@@ -1,0 +1,70 @@
+{% extends 'toko/base.html' %}
+
+{% block title %}{{ produk.nama }}{% endblock %}
+
+{% block konten %}
+
+<!-- Breadcrumb navigasi -->
+<div style="margin-bottom: 1.25rem; font-size: .9rem; color: var(--abu);">
+  <a href="/" style="color: var(--biru); text-decoration:none;">Beranda</a>
+  &rsaquo;
+  <a href="/produk/" style="color: var(--biru); text-decoration:none;">Produk</a>
+  &rsaquo;
+  <span>{{ produk.nama }}</span>
+</div>
+
+<!-- ===== Konten Detail ===== -->
+<div class="kartu">
+  <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start;">
+
+    <!-- Kolom kiri: gambar/ikon produk -->
+    <div style="text-align: center;">
+      <div style="font-size: 6rem; padding: 2rem;
+                  background: var(--biru-muda); border-radius: var(--radius);">
+        {{ produk.emoji }}
+      </div>
+      <span class="badge" style="margin-top: 1rem; display:inline-block;">
+        {{ produk.kategori }}
+      </span>
+    </div>
+
+    <!-- Kolom kanan: informasi detail -->
+    <div>
+      <h1 style="font-size: 1.7rem; margin-bottom: .5rem;">{{ produk.nama }}</h1>
+      <p style="color: var(--abu); font-size: .88rem; margin-bottom: 1.25rem;">
+        ID Produk: <strong>#{{ produk.id }}</strong>
+      </p>
+
+      <!-- Harga -->
+      <div style="background: var(--biru-muda); border-radius: 8px;
+                  padding: 1rem; margin-bottom: 1.25rem; display: inline-block;">
+        <span style="font-size: .85rem; color: var(--abu); display:block;">Harga</span>
+        <span style="font-size: 1.8rem; font-weight: 700; color: var(--hijau);">
+          Rp {{ produk.harga|floatformat:0 }}
+        </span>
+      </div>
+
+      <!-- Deskripsi -->
+      <h2 style="font-size: 1rem; color: var(--abu); margin-bottom: .4rem;">Deskripsi Produk</h2>
+      <p style="line-height: 1.75; color: #374151; margin-bottom: 1.5rem;">
+        {{ produk.deskripsi }}
+      </p>
+
+      <!-- Aksi -->
+      <div style="display: flex; gap: .75rem; flex-wrap: wrap;">
+        <a href="/produk/" class="tombol tombol-outline">← Kembali ke Katalog</a>
+        <a href="/kontak/" class="tombol">Hubungi Kami</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Responsif di layar kecil -->
+<style>
+  @media (max-width: 600px) {
+    .kartu > div { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'toko/base.html' %}
+
+{% block title %}Kontak{% endblock %}
+
+{% block konten %}
+
+<h1>📞 Hubungi Kami</h1>
+<p style="color: var(--abu); margin-bottom: 1.5rem;">
+  Ada pertanyaan atau butuh bantuan? Tim kami siap membantu Anda!
+</p>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.25rem;">
+
+  <!-- Kartu Informasi Kontak -->
+  <div class="kartu">
+    <h2 style="margin-bottom: 1.25rem;">📌 Informasi Kontak</h2>
+
+    <!-- Baris info kontak -->
+    {% with k=kontak %}
+
+    <div style="display:flex; flex-direction:column; gap:.9rem;">
+
+      <div style="display:flex; align-items:flex-start; gap:.75rem;">
+        <span style="font-size:1.3rem;">🏢</span>
+        <div>
+          <strong>Nama Toko</strong><br>
+          <span style="color:var(--abu);">{{ k.nama_toko }}</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:.75rem;">
+        <span style="font-size:1.3rem;">📍</span>
+        <div>
+          <strong>Alamat</strong><br>
+          <span style="color:var(--abu);">{{ k.alamat }}</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:.75rem;">
+        <span style="font-size:1.3rem;">📞</span>
+        <div>
+          <strong>Telepon</strong><br>
+          <span style="color:var(--abu);">{{ k.telepon }}</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:.75rem;">
+        <span style="font-size:1.3rem;">💬</span>
+        <div>
+          <strong>WhatsApp</strong><br>
+          <span style="color:var(--abu);">{{ k.whatsapp }}</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:.75rem;">
+        <span style="font-size:1.3rem;">✉️</span>
+        <div>
+          <strong>Email</strong><br>
+          <a href="mailto:{{ k.email }}" style="color:var(--biru);">{{ k.email }}</a>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:flex-start; gap:.75rem;">
+        <span style="font-size:1.3rem;">📸</span>
+        <div>
+          <strong>Instagram</strong><br>
+          <span style="color:var(--abu);">{{ k.instagram }}</span>
+        </div>
+      </div>
+
+    </div>
+    {% endwith %}
+  </div>
+
+  <!-- Kartu Jam Operasional -->
+  <div style="display:flex; flex-direction:column; gap:1.25rem;">
+
+    <div class="kartu">
+      <h2 style="margin-bottom: 1rem;">🕐 Jam Operasional</h2>
+      <div style="display:flex; align-items:center; gap:.75rem;">
+        <span style="font-size:1.5rem;">📅</span>
+        <span style="color:var(--abu);">{{ kontak.jam_buka }}</span>
+      </div>
+      <p style="margin-top:.75rem; font-size:.88rem; color:var(--abu);">
+        Di luar jam kerja? Kirim pesan via WhatsApp dan kami akan balas
+        secepatnya pada hari kerja berikutnya.
+      </p>
+    </div>
+
+    <div class="kartu" style="background: var(--biru-muda); border-color: #bfdbfe;">
+      <h2 style="font-size:1.1rem; margin-bottom:.5rem; color: var(--biru);">
+        💡 Tips Berbelanja
+      </h2>
+      <ul style="color:#1e40af; font-size:.9rem; padding-left:1.25rem; line-height:2;">
+        <li>Cek stok sebelum memesan</li>
+        <li>Gunakan WhatsApp untuk respons cepat</li>
+        <li>Sertakan ID produk saat menghubungi kami</li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

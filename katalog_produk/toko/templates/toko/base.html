@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}TechStore{% endblock %} — TechStore Indonesia</title>
+  <style>
+    /* ===== Reset & variabel ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --biru      : #2563eb;
+      --biru-gelap: #1d4ed8;
+      --biru-muda : #eff6ff;
+      --abu       : #6b7280;
+      --abu-muda  : #f3f4f6;
+      --putih     : #ffffff;
+      --hitam     : #111827;
+      --border    : #e5e7eb;
+      --hijau     : #16a34a;
+      --radius    : 10px;
+      --shadow    : 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--abu-muda);
+      color: var(--hitam);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== Navigasi ===== */
+    nav {
+      background: var(--biru);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 60px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    }
+    nav .brand {
+      color: var(--putih);
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: .3px;
+    }
+    nav .nav-links { display: flex; gap: 1rem; margin-left: auto; }
+    nav .nav-links a {
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      padding: .35rem .75rem;
+      border-radius: 6px;
+      font-size: .95rem;
+      transition: background .2s;
+    }
+    nav .nav-links a:hover,
+    nav .nav-links a.aktif {
+      background: rgba(255,255,255,.2);
+      color: var(--putih);
+    }
+
+    /* ===== Konten utama ===== */
+    main { flex: 1; padding: 2rem; max-width: 1100px; width: 100%; margin: 0 auto; }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--hitam);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 1.2rem;
+      font-size: .85rem;
+    }
+
+    /* ===== Komponen umum ===== */
+    h1 { font-size: 1.9rem; margin-bottom: 1rem; color: var(--hitam); }
+    h2 { font-size: 1.4rem; margin-bottom: .75rem; }
+
+    .kartu {
+      background: var(--putih);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .tombol {
+      display: inline-block;
+      background: var(--biru);
+      color: var(--putih);
+      padding: .6rem 1.2rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: background .2s, transform .1s;
+    }
+    .tombol:hover { background: var(--biru-gelap); transform: translateY(-1px); }
+    .tombol-outline {
+      background: transparent;
+      border: 2px solid var(--biru);
+      color: var(--biru);
+    }
+    .tombol-outline:hover { background: var(--biru-muda); }
+
+    .badge {
+      display: inline-block;
+      background: var(--biru-muda);
+      color: var(--biru);
+      border-radius: 20px;
+      padding: .2rem .7rem;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+
+    .harga {
+      color: var(--hijau);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== Navigasi ===== -->
+<nav>
+  <a href="/" class="brand">🛒 TechStore</a>
+  <div class="nav-links">
+    <a href="/" {% if request.path == '/' %}class="aktif"{% endif %}>Beranda</a>
+    <a href="/produk/" {% if '/produk' in request.path %}class="aktif"{% endif %}>Produk</a>
+    <a href="/kontak/" {% if request.path == '/kontak/' %}class="aktif"{% endif %}>Kontak</a>
+  </div>
+</nav>
+
+<!-- ===== Konten utama ===== -->
+<main>
+  {% block konten %}{% endblock %}
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <p>© 2026 TechStore Indonesia — Praktikum PPL</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'toko/base.html' %}
+
+{% block title %}Katalog Produk{% endblock %}
+
+{% block konten %}
+
+<!-- ===== Judul Halaman ===== -->
+<div style="margin-bottom: 1.5rem;">
+  <h1>🛍️ Katalog Produk</h1>
+  <p style="color: var(--abu);">Menampilkan {{ produk_list|length }} produk tersedia</p>
+</div>
+
+<!-- ===== Grid Produk ===== -->
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem;">
+
+  {% for produk in produk_list %}
+  <div class="kartu" style="display:flex; flex-direction:column; transition: transform .2s, box-shadow .2s;"
+       onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,.12)'"
+       onmouseout="this.style.transform='';this.style.boxShadow=''">
+
+    <!-- Ikon & Kategori -->
+    <div style="font-size: 3rem; text-align:center; padding: 1.5rem;
+                background: var(--biru-muda); border-radius: 8px; margin-bottom: 1rem;">
+      {{ produk.emoji }}
+    </div>
+
+    <!-- Info Produk -->
+    <span class="badge" style="margin-bottom: .5rem;">{{ produk.kategori }}</span>
+    <h2 style="font-size: 1.1rem; margin-bottom: .4rem;">{{ produk.nama }}</h2>
+    <p style="color: var(--abu); font-size: .88rem; line-height: 1.5; flex: 1;
+              margin-bottom: .75rem;">
+      {{ produk.deskripsi|truncatechars:90 }}
+    </p>
+
+    <!-- Harga & Tombol -->
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-top: auto;">
+      <span class="harga">Rp {{ produk.harga|floatformat:0 }}</span>
+      <a href="/produk/{{ produk.id }}/" class="tombol" style="font-size:.85rem; padding:.45rem 1rem;">
+        Detail →
+      </a>
+    </div>
+
+  </div>
+  {% empty %}
+  <p style="color: var(--abu);">Belum ada produk yang tersedia.</p>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
